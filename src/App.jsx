@@ -1,12 +1,28 @@
-import Myevents from './components/myevents'
-import './App.css'
+import { HomePage } from './components/HomePage'
+import Myevents from './components/Myevents'
+import { Routes,Route} from 'react-router-dom'
+import { Layout } from './components/layout'
+import { Events } from './components/Events'
+import { EventPage } from './components/EventPage'
+import { SpecificDay } from './components/SpecificDay'
+import { Login } from './components/Login'
 
 function App() {
 
   return (
     <>
-    <div>
-      <Myevents/>
+     <div className='body'>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route  path='/' element={<HomePage />}  />
+          <Route path='/Events' element={<Events  />} />
+          <Route path={`/Events/:id`} element={<EventPage />}  />
+          <Route path={`/Myevents`} element={<Myevents/>}  />
+          <Route path={`/Specificday`} element={<SpecificDay/>}  />
+          <Route path={`/Login`} element={<Login/>}  />
+         
+        </Route>
+      </Routes>
     </div>
     </>
   )
