@@ -4,4 +4,17 @@
     align-items: center;
 font-family: sans-serif;
     height: 10vh;
+    background-color: #E0E1DD;
+}
+.logo{
+    width:25vmin;
+    height:70px;
+    object-fit:contain;
+  }
+  .shadow {
+    background-color: #E0E1DD;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.body{
+    background-color: #E0E1DD;
 }
