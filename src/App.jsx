@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Layout/>}>
           <Route  path='/' element={<HomePage />}  />
           <Route path='/Events' element={<Events  />} />
-          <Route path={`/Events/:id`} element={<EventPage />}  />
+          <Route path={`/Events:id`} element={<EventPage />}  />
           <Route path={`/Myevents`} element={<Myevents/>}  />
           <Route path={`/Myevents:day`} element={<SpecificDay/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />

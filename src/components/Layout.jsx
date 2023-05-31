@@ -11,6 +11,7 @@ export const Layout = () => {
       <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
         <Link to='/' className="link">Home</Link>
         <Link to='/Events' className="link">Events</Link>
+        <Link to='/Events1' className="link">Eventsid</Link>
         <Link to='/Myevents' className="link">My Events </Link>
         <Link to='/Contactus' className="link">Contact us </Link>
         <Link to="/Login" className="link">Login</Link>

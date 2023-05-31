@@ -18,3 +18,10 @@ font-family: sans-serif;
 .body{
     background-color: #E0E1DD;
 }
+
+#main-section{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
