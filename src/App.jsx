@@ -6,6 +6,7 @@ import { Events } from './components/Events'
 import { EventPage } from './components/EventPage'
 import { SpecificDay } from './components/SpecificDay'
 import { Login } from './components/Login'
+import { Contactus } from './components/Contactus'
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
           <Route path='/Events' element={<Events  />} />
           <Route path={`/Events/:id`} element={<EventPage />}  />
           <Route path={`/Myevents`} element={<Myevents/>}  />
-          <Route path={`/Specificday`} element={<SpecificDay/>}  />
+          <Route path={`/Myevents:day`} element={<SpecificDay/>}  />
+          <Route path={`/Contactus`} element={<Contactus/>}  />
           <Route path={`/Login`} element={<Login/>}  />
          
         </Route>
