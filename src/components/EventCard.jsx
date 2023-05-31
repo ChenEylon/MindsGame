@@ -1,17 +1,40 @@
-import React, { useContext } from 'react';
-import DataContext from '../DataContext';
-import "./EventCard.css"
+import React, { useContext } from "react";
+import DataContext from "../DataContext";
+import "./EventCard.css";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-export const EventCard = () => {
+
+export const EventCard = ({ index }) => {
   const theContext = useContext(DataContext);
-  const theData = theContext[0]
-  const setTheData = theContext[1]
-  // let imgUrl = theData.
+  const theData = theContext[0];
+  const setTheData = theContext[1];
+  let imgUrl = theData[index].event_image;
+  let title = theData[index].event_name;
+  let price = theData[index].price;
+  let date = theData[index].date;
+  let startAt = theData[index].start_time;
+  let placeName = theData[index].place_name;
+  let city = theData[index].city;
+
   return (
-    <div id='card container'>
-        <div id='image'>
-          <img src=""  />
+    <div id="card-container">
+      <div id="image-container">
+        <img id="the-img" src={imgUrl} />
+      </div>
+      <div id="info">
+        <h3>"{title}"</h3>
+        <div id="card-discription">
+          <span>
+            {date} , {startAt}
+          </span>
+          <span> <LocationOnIcon/> "{placeName}", {city}</span>
         </div>
+        <div id="buy-section">
+        <span id="price">{price}$</span>
+        <span id="view-btn">view</span>
+        </div>
+        
+      </div>
     </div>
-  )
-}
+  );
+};

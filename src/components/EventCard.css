@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#card-container{
+    width: 350px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    box-shadow: 7px 7px 6px 1px rgba(0, 0, 0, 0.2);
+}
+
+#image-container{
+    width: 100%;
+    height: fit-content;
+}
+
+#the-img{
+    width: 100%;
+    height: auto;
+}
+
+#info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Lilita One';
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#card-discription {
+    color: #595959;
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#buy-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+#view-btn{
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #415A77;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#price{
+    margin-left: 10px;
+}

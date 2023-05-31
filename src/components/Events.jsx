@@ -11,7 +11,7 @@ export const Events = () => {
   return (
     <div>
       Events:
-      <EventCard/>
+      {theData.map((value,index)=><EventCard key={index} index={index} />)}
     </div>
   )
 }
