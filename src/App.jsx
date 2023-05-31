@@ -10,6 +10,7 @@ import { Contactus } from './components/Contactus'
 import data from "./MOCK_DATA.json";
 import { useState } from 'react'
 import DataContext from './DataContext';
+import "./App.css"
 function App() {
    
   const [dataArr, setDataArr] = useState([...data.data]);

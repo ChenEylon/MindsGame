@@ -8,26 +8,23 @@ export const Layout = () => {
   return (
     <div >
       <nav className='navbar'>
-          <Link to='/' className="link">Home</Link>
-          <Link to='/Events' className="link">Events</Link>
-          <Link to='/Myevents' className="link">My Events </Link>
-          <Link to='/Contactus' className="link">Contact us </Link>
-          <Link to="/Login" className="link">Login</Link>
+      <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
+        <Link to='/' className="link">Home</Link>
+        <Link to='/Events' className="link">Events</Link>
+        <Link to='/Myevents' className="link">My Events </Link>
+        <Link to='/Contactus' className="link">Contact us </Link>
+        <Link to="/Login" className="link">Login</Link>
       </nav>
       <Outlet />
-      <CDBModalFooter className="shadow">
+      <CDBModalFooter className="shadow" style={{backgroundColor: '#E0E1DD'}}>
         <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
           <CDBBox display="flex" justifyContent="between" className="flex-wrap">
             <CDBBox>
               <a href="/" className="d-flex align-items-center p-0 text-dark">
-                <img className="logo" src="../../Realestatelogo.png" alt="LuxeLiving Logo" />
-                <span className="ms-3 h5 font-weight-bold">MindGames</span>
+              <img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" />
               </a>
               <p className="my-3" style={{ width: '250px' }}>
-              Our website is designed to cater to individuals who have an insatiable thirst for knowledge and crave
-               unique learning experiences. Whether you are passionate about art, science, philosophy,
-               or any other field,
-               MindGames offers a diverse range of lectures and events that cater to a wide array of interests.
+                MindGames: Unleashing the power of knowledge through captivating lectures and seamless ticketing.
               </p>
               <CDBBox display="flex" className="mt-4">
                 <CDBBtn flat color="dark">
