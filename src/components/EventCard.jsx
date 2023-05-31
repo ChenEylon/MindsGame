@@ -35,7 +35,7 @@ export const EventCard = ({ index }) => {
         </div>
         <div id="buy-section">
         <span id="price">{price}$</span>
-        <Link className="link" to={'/Events/' + id}><span id="view-btn">view</span></Link>
+        <Link className="link" to={`/Events/${id}`}><span id="view-btn">view</span></Link>
         </div>
         
       </div>

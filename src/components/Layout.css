@@ -9,8 +9,11 @@
     align-items: center;
     font-family: sans-serif;
     height: 50px;
+    width: 100%;
     background-color: #E0E1DD;
     box-shadow: 7px 7px 6px 1px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 5;
 }
 
 .navLink:hover{
@@ -46,7 +49,16 @@
     min-height: 100vh;
 }
 
+.shadow{
+    width: 100%;
+    position: relative;
+}
+
+#under-nav{
+    position: relative;
+    top: 50px;
+}
+
 #outlet{
-    min-height: calc(100vh - 330.58px);
-    margin-top: 10px;
+    min-height: calc(100vh - 331px);
 }

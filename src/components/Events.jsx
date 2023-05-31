@@ -6,12 +6,12 @@ export const Events = () => {
   const theContext = useContext(DataContext);
   const theData = theContext[0]
   const setTheData = theContext[1]
-  
-  console.log(theData[0].email);
   return (
     <div>
       Events:
-      {theData.map((value,index)=><EventCard key={index} index={index} />)}
+      <div id='event-container'>
+        {theData.map((value,index)=><EventCard key={index} index={index} />)}
+      </div>
     </div>
   )
 }
