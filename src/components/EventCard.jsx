@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import DataContext from "../DataContext";
 import "./EventCard.css";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Link } from "react-router-dom";
 
 
 export const EventCard = ({ index }) => {
@@ -15,6 +16,9 @@ export const EventCard = ({ index }) => {
   let startAt = theData[index].start_time;
   let placeName = theData[index].place_name;
   let city = theData[index].city;
+  let id = theData[index].id;
+
+
 
   return (
     <div id="card-container">
@@ -31,7 +35,7 @@ export const EventCard = ({ index }) => {
         </div>
         <div id="buy-section">
         <span id="price">{price}$</span>
-        <span id="view-btn">view</span>
+        <Link className="link" to={'/Events/' + id}><span id="view-btn">view</span></Link>
         </div>
         
       </div>

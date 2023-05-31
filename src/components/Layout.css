@@ -1,11 +1,22 @@
-.navbar{
+*{
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+#navbar{
     display: flex;
     justify-content: space-around;
     align-items: center;
-font-family: sans-serif;
-    height: 10vh;
+    font-family: sans-serif;
+    height: 50px;
     background-color: #E0E1DD;
+    box-shadow: 7px 7px 6px 1px rgba(0, 0, 0, 0.2);
 }
+
+.navLink:hover{
+    scale: 130%;
+}
+
 .logo{
     width:25vmin;
     height:70px;
@@ -24,4 +35,18 @@ font-family: sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.link{
+    all: unset;
+    cursor: pointer;
+    }
+
+#body-container{
+    min-height: 100vh;
+}
+
+#outlet{
+    min-height: calc(100vh - 330.58px);
+    margin-top: 10px;
 }
