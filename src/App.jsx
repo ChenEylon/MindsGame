@@ -7,7 +7,7 @@ import { EventPage } from './components/EventPage'
 import { SpecificDay } from './components/SpecificDay'
 import { Login } from './components/Login'
 import { Contactus } from './components/Contactus'
-
+import "./App.css"
 function App() {
 
   return (
