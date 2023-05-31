@@ -7,12 +7,17 @@ import { EventPage } from './components/EventPage'
 import { SpecificDay } from './components/SpecificDay'
 import { Login } from './components/Login'
 import { Contactus } from './components/Contactus'
+import data from "./MOCK_DATA.json";
+import { useState } from 'react'
+import DataContext from './DataContext';
 import "./App.css"
 function App() {
-
+   
+  const [dataArr, setDataArr] = useState([...data.data]);
   return (
     <>
      <div className='body'>
+     <DataContext.Provider value={[dataArr,setDataArr]}>
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route  path='/' element={<HomePage />}  />
@@ -22,9 +27,9 @@ function App() {
           <Route path={`/Myevents:day`} element={<SpecificDay/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />
           <Route path={`/Login`} element={<Login/>}  />
-         
         </Route>
       </Routes>
+      </DataContext.Provider>
     </div>
     </>
   )
