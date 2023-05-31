@@ -13,7 +13,9 @@
       "street_addres": "63810 Derek Center",
       "city": "Lianxia",
       "lecturer_name": "Bobbee Delouch",
-      "lecturer_info": "Staff Accountant IV"
+      "lecturer_info": "Staff Accountant IV",
+      "price": 120,
+      "max_amount": 120
     },
     {
       "event_name": "Exploring the Wonders of the Universe",
@@ -28,7 +30,9 @@
       "street_addres": "7 Dayton Trail",
       "city": "Seria",
       "lecturer_name": "Hunter MacVean",
-      "lecturer_info": "Analog Circuit Design manager"
+      "lecturer_info": "Analog Circuit Design manager",
+      "price": 140,
+      "max_amount": 100
     },
     {
       "event_name": "Mastering the Art of Leadership",
@@ -43,7 +47,9 @@
       "street_addres": "166 Springs Pass",
       "city": "Qingshu",
       "lecturer_name": "Darice Seine",
-      "lecturer_info": "Analyst Programmer"
+      "lecturer_info": "Analyst Programmer",
+      "price": 200,
+      "max_amount": 80
     },
     {
       "event_name": "The Science of Mindfulness and Well-being",
@@ -58,7 +64,9 @@
       "street_addres": "20075 Arkansas Junction",
       "city": "Kafr Baţnā",
       "lecturer_name": "Bernardine Ambrosoni",
-      "lecturer_info": "VP Quality Control"
+      "lecturer_info": "VP Quality Control",
+      "price": 99,
+      "max_amount": 250
     },
     {
       "event_name": "Unveiling the Secrets of Ancient Civilizations",
@@ -73,7 +81,9 @@
       "street_addres": "1 Ronald Regan Trail",
       "city": "Daqingshan",
       "lecturer_name": "Papageno Cohalan",
-      "lecturer_info": "VP Product Management"
+      "lecturer_info": "VP Product Management",
+      "price": 0,
+      "max_amount": 300
     },
     {
       "event_name": "The Art and Science of Happiness",
@@ -88,7 +98,9 @@
       "street_addres": "069 Orin Drive",
       "city": "Sobreira",
       "lecturer_name": "Dal Dallender",
-      "lecturer_info": "Marketing Assistant"
+      "lecturer_info": "Marketing Assistant",
+      "price": 199,
+      "max_amount": 50
     },
     {
       "event_name": "The Evolution of Technology: From Wheels to AI",
@@ -103,7 +115,9 @@
       "street_addres": "6 Buena Vista Plaza",
       "city": "Gore",
       "lecturer_name": "Stacey Dorward",
-      "lecturer_info": "Geological Engineer"
+      "lecturer_info": "Geological Engineer",
+      "price": 320,
+      "max_amount": 30
     },
     {
       "event_name": "The Art of Storytelling: Crafting Compelling Narrative",
@@ -118,7 +132,9 @@
       "street_addres": "1691 Gulseth Point",
       "city": "Ramanavichy",
       "lecturer_name": "Rosalia Tulip",
-      "lecturer_info": "Marketing Assistant"
+      "lecturer_info": "Marketing Assistant",
+      "price": 299,
+      "max_amount": 60
     },
     {
       "event_name": "Exploring the Human Mind: Psychology in Everyday Life",
@@ -133,7 +149,9 @@
       "street_addres": "8 Bartillon Street",
       "city": "Sekararum",
       "lecturer_name": "Dalenna Stiell",
-      "lecturer_info": "Junior Executive"
+      "lecturer_info": "Junior Executive",
+      "price": 150,
+      "max_amount": 90
     },
     {
       "event_name": "The Renaissance: Revival of Art, Science, and Ideas",
@@ -148,7 +166,9 @@
       "street_addres": "28 American Ash Point",
       "city": "Qızılhacılı",
       "lecturer_name": "Weston Ferrero",
-      "lecturer_info": "Safety Technician II"
+      "lecturer_info": "Safety Technician II",
+      "price": 450,
+      "max_amount": 50
     },
     {
       "event_name": "The Power of Emotional Intelligence in Leadership",
@@ -163,7 +183,9 @@
       "street_addres": "2 Declaration Circle",
       "city": "Mongaguá",
       "lecturer_name": "Olly Poyle",
-      "lecturer_info": "Account Coordinator"
+      "lecturer_info": "Account Coordinator",
+      "price": 320,
+      "max_amount": 100
     },
     {
       "event_name": "Introduction to Sustainable Living: Nurturing our Planet",
@@ -178,7 +200,9 @@
       "street_addres": "98082 West Street",
       "city": "Bang Phae",
       "lecturer_name": "Annadiane Sawtell",
-      "lecturer_info": "Analyst Programmer"
+      "lecturer_info": "Analyst Programmer",
+      "price": 99,
+      "max_amount": 120
     },
     {
       "event_name": "The Art of Time Management and Productivity",
@@ -193,7 +217,9 @@
       "street_addres": "8 Briar Crest Plaza",
       "city": "Berber",
       "lecturer_name": "Anny Farnish",
-      "lecturer_info": "Product Engineer"
+      "lecturer_info": "Product Engineer",
+      "price": 200,
+      "max_amount": 60
     },
     {
       "event_name": "The Secrets of Effective Negotiation and Persuasio",
@@ -208,7 +234,9 @@
       "street_addres": "22 Dawn Terrace",
       "city": "Boca Raton",
       "lecturer_name": "Evangelin Ticehurst",
-      "lecturer_info": "Assistant Media Planner"
+      "lecturer_info": "Assistant Media Planner",
+      "price": 30,
+      "max_amount": 250
     },
     {
       "event_name": "The Power of Resilience: Bouncing Back from Adversity",
@@ -223,7 +251,9 @@
       "street_addres": "6081 Holy Cross Terrace",
       "city": "Blois",
       "lecturer_name": "Lonee Common",
-      "lecturer_info": "Chief Design Engineer"
+      "lecturer_info": "Chief Design Engineer",
+      "price": 110,
+      "max_amount": 55
     },
     {
       "event_name": "The Universe Within: Exploring Human Consciousness",
@@ -238,7 +268,9 @@
       "street_addres": "469 Hooker Trail",
       "city": "Seixo",
       "lecturer_name": "Dani Bottinelli",
-      "lecturer_info": "Systems Administrator III"
+      "lecturer_info": "Systems Administrator III",
+      "price": 75,
+      "max_amount": 80
     },
     {
       "event_name": "Unlocking Creativity: Nurturing the Creative Mind",
@@ -253,7 +285,9 @@
       "street_addres": "36670 Glendale Crossing",
       "city": "Bąków",
       "lecturer_name": "Andrea Hawksworth",
-      "lecturer_info": "Budget/Accounting Analyst IV"
+      "lecturer_info": "Budget/Accounting Analyst IV",
+      "price": 140,
+      "max_amount": 35
     },
     {
       "event_name": "The History and Influence of Ancient Philosoph",
@@ -268,7 +302,9 @@
       "street_addres": "37 Linden Trail",
       "city": "Fushan",
       "lecturer_name": "Johnathon De Cristofalo",
-      "lecturer_info": "Developer I"
+      "lecturer_info": "Developer I",
+      "price": 99,
+      "max_amount": 120
     },
     {
       "event_name": "The Power of Mind-Body Connection: Exploring Holistic Health",
@@ -283,7 +319,9 @@
       "street_addres": "72561 Dixon Place",
       "city": "Revolucion",
       "lecturer_name": "Samantha Stoyles",
-      "lecturer_info": "Office Assistant I"
+      "lecturer_info": "Office Assistant I",
+      "price": 230,
+      "max_amount": 20
     },
     {
       "event_name": "The Future of Technology: Trends and Innovations",
@@ -298,7 +336,9 @@
       "street_addres": "7585 Claremont Drive",
       "city": "Libei",
       "lecturer_name": "Andris Kremer",
-      "lecturer_info": "GIS Technical Architect"
+      "lecturer_info": "GIS Technical Architect",
+      "price": 160,
+      "max_amount": 80
     }
   ]
 }
