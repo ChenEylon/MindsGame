@@ -6,19 +6,19 @@ import { CDBModalFooter, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
 
 export const Layout = () => {
   return (
-    <div >
-      <nav className='navbar'>
-      <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
-        <Link to='/' className="link">Home</Link>
-        <Link to='/Events' className="link">Events</Link>
-        <Link to='/Events1' className="link">Eventsid</Link>
-        <Link to='/Myevents' className="link">My Events </Link>
-        <Link to='/Contactus' className="link">Contact us </Link>
-        <Link to="/Login" className="link">Login</Link>
+    <div id='body-container' >
+      <nav id='navbar'>
+        <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
+        <Link to='/' className="link navLink">Home</Link>
+        <Link to='/Events' className="link navLink">Events</Link>
+        <Link to='/Myevents' className="link navLink">My Events </Link>
+        <Link to="/Login" className="link navLink">Login</Link>
       </nav>
-      <Outlet />
+     <div id='outlet'><Outlet/></div>
+      
+     
       <CDBModalFooter className="shadow" style={{backgroundColor: '#E0E1DD'}}>
-        <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
+        <CDBBox display="flex" flex="column" className="mx-auto " style={{ width: '90%' ,paddingBottom :"1.5rem", paddingTop :"1.5rem" }}>
           <CDBBox display="flex" justifyContent="between" className="flex-wrap">
             <CDBBox>
               <a href="/" className="d-flex align-items-center p-0 text-dark">
@@ -72,7 +72,7 @@ export const Layout = () => {
               </CDBBox>
             </CDBBox>
           </CDBBox>
-          <small className="text-center mt-5">&copy; Chen Eylon.</small>
+          <small className="text-center" >&copy; MindGames Ltd</small>
         </CDBBox>
       </CDBModalFooter>
 

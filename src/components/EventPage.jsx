@@ -1,11 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DataContext from '../DataContext';
 import "./EventPage.css"
+import { useParams } from 'react-router-dom';
+
 export const EventPage = () => {
   const theContext = useContext(DataContext);
-  const theData = theContext
+  const theData = theContext[0]
   const { id } = useParams();
-  const dataid = theData?.find((view) =>view.id == id);
+  const [dataid,setDataid] = useState(0) ;
+  
+  useEffect(() => {
+    setDataid(theData?.find((view) =>view.id == id))
+  }, []);
 
   return (
     <div className='eventpage'>
