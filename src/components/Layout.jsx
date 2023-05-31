@@ -14,7 +14,12 @@ export const Layout = () => {
         <Link to='/Myevents' className="link navLink">My Events </Link>
         <Link to="/Login" className="link navLink">Login</Link>
       </nav>
-     <div id='outlet'><Outlet/></div>
+      <div id="under-nav">
+        
+        <div id='outlet'>
+          <Outlet/>
+        </div> 
+      
       
      
       <CDBModalFooter className="shadow" style={{backgroundColor: '#E0E1DD'}}>
@@ -75,7 +80,7 @@ export const Layout = () => {
           <small className="text-center" >&copy; MindGames Ltd</small>
         </CDBBox>
       </CDBModalFooter>
-
+      </div>
     </div>
   )
 }
