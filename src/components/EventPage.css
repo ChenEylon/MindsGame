@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.eventpage {
+    background-color: #E0E1DD;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family:serif;
+
+}
+
+.img{
+    width: 95vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #E0E1DD;
+}
+.time{
+    margin-top: 10vh;
+}
+.name{
+    font-size: 4vw;
+    margin-bottom: 4vh;
+}
+.lecture{
+    font-size: 5vw;
+    font-family:'Times New Roman', Times, serif;
+}
+.firstrest{
+    width: 70%;
+    display: flex;
+    justify-content:flex-start;
+    flex-direction: column;
+    align-items:flex-start;
+    flex-wrap: wrap;
+    margin-left: 4vw;
+}
+.secondrest{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.description{
+    margin-top: 5vh;
+}
+button{
+    background-color: green;
+}
+.rest{
+    display: flex;
+    margin-bottom: 10vh;
+}
+.third{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 4vh;
+}
+.imgdiv{
+    background-color:  #E0E1DD; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headlinebottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vh;
+    font-size: larger;
+}
