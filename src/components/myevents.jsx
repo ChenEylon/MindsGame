@@ -5,9 +5,20 @@ import Calendar from 'react-calendar';
 
 const Myevents = () => {
     const [value, onChange] = useState(new Date());
+    const handleDateClick = (date) => {
+      console.log('Clicked date:', date);
+    };
+  
+    const dayTileContent = ({ date, view }) => {
+      if (view === 'month') {
+        return <button onClick={() => handleDateClick(date)}>Day</button>;
+      }
+    };
+  
   return (
-    <div>
-        <Calendar onChange={onChange} value={value} />
+    <div className='calender-div'>
+        <Calendar className={"calender"} value={value} onChange={onChange} tileContent={dayTileContent} />
+
         </div>
   )
 }

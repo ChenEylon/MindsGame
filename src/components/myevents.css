@@ -2,3 +2,10 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.calender{
+    width: 80%;
+}
+.calender-div{
+    display: flex;
+    justify-content: center;
+}
