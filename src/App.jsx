@@ -5,8 +5,8 @@ import { Layout } from './components/layout'
 import { Events } from './components/Events'
 import { EventPage } from './components/EventPage'
 import { SpecificDay } from './components/SpecificDay'
-import { Login } from './components/Login'
 import  Contactus from './components/Contactus'
+import  Login  from './components/Login'
 import data from "./MOCK_DATA.json";
 import { useState } from 'react'
 import DataContext from './DataContext';
