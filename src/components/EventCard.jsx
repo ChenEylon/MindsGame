@@ -1,22 +1,20 @@
-import React, { useContext } from "react";
-import DataContext from "../DataContext";
+import React,  {useState}  from "react";
 import "./EventCard.css";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Link } from "react-router-dom";
 
 
 export const EventCard = ({ index }) => {
-  const theContext = useContext(DataContext);
-  const theData = theContext[0];
-  const setTheData = theContext[1];
-  let imgUrl = theData[index].event_image;
-  let title = theData[index].event_name;
-  let price = theData[index].price;
-  let date = theData[index].date;
-  let startAt = theData[index].start_time;
-  let placeName = theData[index].place_name;
-  let city = theData[index].city;
-  let id = theData[index].id;
+  const [dataArr, setDataArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
+ 
+  let imgUrl = dataArr[index].event_image;
+  let title = dataArr[index].event_name;
+  let price = dataArr[index].price;
+  let date = dataArr[index].date;
+  let startAt = dataArr[index].start_time;
+  let placeName = dataArr[index].place_name;
+  let city = dataArr[index].city;
+  let id = dataArr[index].id;
 
   if(price==0){
     price = "free";

@@ -1,6 +1,6 @@
 
-import React, { useContext, useEffect, useState } from 'react';
-import DataContext from '../DataContext';
+import React, { useEffect, useState } from 'react';
+
 import { useForm } from "react-hook-form";
 import "./SpecificDay.css";
 import { useParams } from "react-router";
@@ -8,16 +8,16 @@ import { useParams } from "react-router";
 
 
 export const SpecificDay = () => {
+  const [dataArr, setDataArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
+  const [dataByDate, setDataByDate] = useState(0);
 
-  const theContext = useContext(DataContext);
-  const theData = theContext[0]
-  const [dataByDate,setDataByDate] = useState(0) ;
+  
   const { date } = useParams();
   let theDate;
 
   useEffect(() => {
     theDate= date.replaceAll("-","/");
-    setDataByDate(theData?.find((view)=> view.date == theDate))
+    setDataByDate(dataArr?.find((view)=> view.date == theDate))
   },[]);
   console.log(dataByDate);
 
