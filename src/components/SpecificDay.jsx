@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
+import { useForm} from 'react-hook-form';
 import './SpecificDay.css';
 
+
 export const SpecificDay = () => {
+
   const [submitted, setSubmitted] = useState(false);
   const {
     register,
@@ -49,6 +51,7 @@ export const SpecificDay = () => {
           <div className="row">
             <div className="col-12 text-center">
               <div className="SpecificDay">
+                
                 <form id="contact-form" onSubmit={handleSubmit(handleSubmission)} noValidate>
                   <div className="row formRow">
                     <div className="col-6">
@@ -65,7 +68,7 @@ export const SpecificDay = () => {
                     </div>
                     <div className="col-6">
                       <input
-                        type="text"
+                        type="date"
                         name="date"
                         {...register('date', { required: true })}
                         value={formData.date}
@@ -93,7 +96,7 @@ export const SpecificDay = () => {
                   <div className="row formRow">
                     <div className="col">
                       <input
-                        type="text"
+                        type="number"
                         name="start_time"
                         {...register('start_time', { required: true })}
                         value={formData.start_time}
@@ -107,13 +110,13 @@ export const SpecificDay = () => {
                   <div className="row formRow">
                     <div className="col">
                       <input
-                        type="text"
+                        type="number"
                         name="duration"
                         {...register('duration', { required: true })}
                         value={formData.duration}
                         onChange={handleChange}
                         className="form-control formInput"
-                        placeholder="Duration"
+                        placeholder="Duration (hours)"
                       />
                       {errors.duration && <span className="errorMessage">Please enter the duration</span>}
                     </div>
