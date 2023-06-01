@@ -6,8 +6,8 @@ import { useParams } from 'react-router-dom';
 export const EventPage = () => {
   const theContext = useContext(DataContext);
   const theData = theContext[0]
-  const { id } = useParams();
   const [dataid,setDataid] = useState(0) ;
+  const { id } = useParams();
   
   useEffect(() => {
     setDataid(theData?.find((view) =>view.id == id))
