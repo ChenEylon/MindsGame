@@ -50,7 +50,7 @@ export const Layout = () => {
                 MindGames
               </p>
               <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
-                <Link to='/Specificday'> About Us</Link>
+                <Link> About Us</Link>
                 <Link to='/Contactus'> Contact</Link>
               </CDBBox>
             </CDBBox>

@@ -8,18 +8,25 @@ import { SpecificDay } from './components/SpecificDay'
 import  Contactus from './components/Contactus'
 import  Login  from './components/Login'
 import data from "./MOCK_DATA.json";
-import { useState } from 'react'
-import DataContext from './DataContext';
+import users from "./UsersData.json";
 import "./App.css"
 
 function App() {
    
-  const [dataArr, setDataArr] = useState([...data.data]);
- 
+  
+  if(!localStorage.getItem("dataArr")){
+    localStorage.setItem("dataArr",JSON.stringify(data.data));
+  }
+  
+  if(!localStorage.getItem("usersArr")){
+    localStorage.setItem("usersArr",JSON.stringify(users.users));
+  }
+  
+  
+  
   return (
     <>
      <div className='body'>
-     <DataContext.Provider value={[dataArr,setDataArr]}>
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route  path='/' element={<HomePage />}  />
@@ -32,7 +39,6 @@ function App() {
           <Route path={`/Login`} element={<Login/>}  />
         </Route>
       </Routes>
-      </DataContext.Provider>
     </div>
     </>
   )
