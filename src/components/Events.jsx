@@ -8,7 +8,6 @@ export const Events = () => {
   const setTheData = theContext[1]
   return (
     <div>
-      Events:
       <div id='event-container'>
         {theData.map((value,index)=><EventCard key={index} index={index} />)}
       </div>

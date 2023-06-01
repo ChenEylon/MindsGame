@@ -18,9 +18,8 @@ const Myevents = () => {
   
   return (
     <div className='calender-div'>
-        <Calendar className={"calender"} value={value} onChange={onChange} tileContent={dayTileContent} />
-
-        </div>
+      <Calendar className={"calender"} value={value} onChange={onChange} tileContent={dayTileContent} />
+    </div>
   )
 }
 
