@@ -6,7 +6,7 @@ import { Events } from './components/Events'
 import { EventPage } from './components/EventPage'
 import { SpecificDay } from './components/SpecificDay'
 import { Login } from './components/Login'
-import { Contactus } from './components/Contactus'
+import  Contactus from './components/Contactus'
 import data from "./MOCK_DATA.json";
 import { useState } from 'react'
 import DataContext from './DataContext';
@@ -26,6 +26,7 @@ function App() {
           <Route path={`/Myevents`} element={<Myevents/>}  />
           <Route path={`/Myevents:day`} element={<SpecificDay/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />
+          <Route path={`/Specificday`} element={<SpecificDay/>}  />
           <Route path={`/Login`} element={<Login/>}  />
         </Route>
       </Routes>
