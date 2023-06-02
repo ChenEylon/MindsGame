@@ -58,7 +58,24 @@ export const SpecificDay = () => {
     console.log("Form Data:", data);
     setSubmitted(true);
     reset();
+  
+    const newId = dataArr.length > 0 ? dataArr[dataArr.length - 1].id + 1 : 1;
+    const newData = {
+      id: newId,
+      ...data,
+    };
+  
+    setDataArr((prevDataArr) => {
+      const updatedDataArr = [...prevDataArr, newData];
+      localStorage.setItem("dataArr", JSON.stringify(updatedDataArr));
+      return updatedDataArr;
+    });
   };
+  const handleNewForm = () => {
+    setSubmitted(false);
+    reset();
+  };
+  
 
   if (!submitted) {
     return (
@@ -93,7 +110,7 @@ export const SpecificDay = () => {
                     </div>
                     <div className="col-6">
                       <input
-                        type="date"
+                        type='date'
                         name="date"
                         {...register("date", { required: true })}
                         value={formData.date}
@@ -129,7 +146,7 @@ export const SpecificDay = () => {
                   <div className="row formRow">
                     <div className="col">
                       <input
-                        type="number"
+                        type="time"
                         name="start_time"
                         {...register("start_time", { required: true })}
                         value={formData.start_time}
@@ -346,6 +363,9 @@ export const SpecificDay = () => {
           <div className="row">
             <div className="col-12 text-center">
               <h2>Form Submitted Successfully!</h2>
+              <button className="btn btn-primary" onClick={handleNewForm}>
+                Create New Form
+              </button>
             </div>
           </div>
         </div>
