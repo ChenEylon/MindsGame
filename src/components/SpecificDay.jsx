@@ -9,6 +9,8 @@ import { useParams } from "react-router";
 
 export const SpecificDay = () => {
   const [dataArr, setDataArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
+  const [usersArr, setUsersArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
+  
   const [dataByDate, setDataByDate] = useState(0);
 
   
@@ -18,8 +20,8 @@ export const SpecificDay = () => {
   useEffect(() => {
     theDate= date.replaceAll("-","/");
     setDataByDate(dataArr?.find((view)=> view.date == theDate))
+    console.log(dataByDate);
   },[]);
-  console.log(dataByDate);
 
   const [submitted, setSubmitted] = useState(false);
   const {
@@ -30,20 +32,37 @@ export const SpecificDay = () => {
   } = useForm();
 
   const [formData, setFormData] = useState({
-    event_name: "",
-    date: "",
-    email: "",
-    start_time: "",
-    duration: "",
-    event_info: "",
-    event_image: "",
-    place_name: "",
-    street_address: "",
-    city: "",
-    lecturer_name: "",
-    lecturer_info: "",
-    price: "",
-    max_amount: "",
+    // event_name: "",
+    // date: "",
+    // email: "",
+    // start_time: "",
+    // duration: "",
+    // event_info: "",
+    // event_image: "",
+    // place_name: "",
+    // street_address: "",
+    // city: "",
+    // lecturer_name: "",
+    // lecturer_info: "",
+    // price: "",
+    // max_amount: "",
+    
+      event_name: "",
+      id: "",
+      date: "",
+      email: "",
+      start_time: "",
+      duration: "",
+      event_info: "",
+      event_image: "",
+      place_name: "",
+      street_addres: "",
+      city: "",
+      lecturer_name: "",
+      lecturer_info: "",
+      price: 120,
+      max_amount: 120
+    
   });
 
   const handleChange = (e) => {
@@ -56,6 +75,7 @@ export const SpecificDay = () => {
 
   const handleSubmission = (data) => {
     console.log("Form Data:", data);
+    
     setSubmitted(true);
     reset();
   
