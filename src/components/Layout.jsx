@@ -5,15 +5,19 @@ import React, { useEffect, useState } from 'react';
 
 export const Layout = ({isLogIn,setIsLogIn}) => {
   const [loginNav, setLoginNav] = useState("");
+  const [linkto, setLinkto] = useState("");
+  
   useEffect(() => {
     setLoginNav(loginState())
   }, [isLogIn]);
 
   function loginState() {
     if (!isLogIn) {
+      setLinkto("/Login")
       return <Link to="/Login" className="link navLink">Login</Link>
     }
     else{
+      setLinkto("/Myevents")
       return <button id="logoutBtn" className="navLink" onClick={()=>{localStorage.removeItem('loginData'); setIsLogIn(false)}}>Log out</button>
     }
     
@@ -24,7 +28,7 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
         <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
         <Link to='/' className="link navLink">Home</Link>
         <Link to='/Events' className="link navLink">Events</Link>
-        <Link to='/Myevents' className="link navLink">My Events</Link>
+        <Link to={`${linkto}`} className="link navLink">My Events</Link>
         {loginNav}
         
       </nav>

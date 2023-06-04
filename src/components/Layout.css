@@ -68,3 +68,16 @@ font-size: small;
 #outlet{
     min-height: calc(100vh - 331px);
 }
+
+.logBtn{
+    all: unset;
+    padding: 7px;
+    background-color: #415A77;
+    border-radius: 5px;
+}
+
+.logBtn:hover{
+    scale: 120%;
+    background-color: #778DA9;
+
+}

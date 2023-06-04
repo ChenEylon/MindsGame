@@ -2,10 +2,10 @@ import "./myevents.css";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { Link } from 'react-router-dom';
 
 
-
-const Myevents = () => {
+const Myevents = ({isLogIn}) => {
   const [value, onChange] = useState(new Date());
   const handleDateClick = (date) => {
     const day = date.getDate();
@@ -19,12 +19,7 @@ const Myevents = () => {
 
   };
 
-  // const dayTileContent = ({ date, view }) => {
-  //   if (view === "month") {
-  //     return <div onClick={() => }>Day</div>;
-  
-  //   }
-  // };
+
 
   return (
     <div className="calender-div">
@@ -34,11 +29,11 @@ const Myevents = () => {
         value={value}
         onChange={onChange}
         onClickDay={handleDateClick}
-        // tileContent={dayTileContent}
-        
       />
     </div>
-  );
+  )
+
+ 
 };
 
 export default Myevents;

@@ -4,7 +4,7 @@ import  SignUp  from './SignUp'
 
 export const HomePage = () => {
   return (
-    // <div>HomePage</div>
-    <SignUp/>
+    <div>HomePage</div>
+    
   )
 }

@@ -37,7 +37,7 @@ function App() {
           <Route  path='/' element={<HomePage />}  />
           <Route path='/Events' element={<Events/>} />
           <Route path={`/Events/:id`} element={<EventPage />}  />
-          <Route path={`/Myevents`} element={<Myevents/>}  />
+          <Route path={`/Myevents`} element={<Myevents isLogIn={isLogIn}/>}  />
           <Route path={`/Myevents/:date`} element={<SpecificDay/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />
           <Route path={`/Specificday`} element={<SpecificDay/>}  />
