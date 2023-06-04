@@ -1,8 +1,10 @@
 import "./myevents.css";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
+
 import "react-calendar/dist/Calendar.css";
 import { Link } from 'react-router-dom';
+
 
 
 const Myevents = ({isLogIn}) => {
@@ -18,7 +20,6 @@ const Myevents = ({isLogIn}) => {
     console.log(formattedDate);
 
   };
-
 
 
   return (

@@ -33,9 +33,14 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
         
       </nav>
       <div id="under-nav">
+
+
         <div id='outlet'>
           <Outlet />
         </div>
+
+
+
 
         <CDBModalFooter className="shadow" style={{ backgroundColor: '#E0E1DD' }}>
           <CDBBox display="flex" flex="column" className="mx-auto " style={{ width: '90%', paddingBottom: "1.5rem", paddingTop: "1.5rem" }}>
@@ -49,13 +54,21 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
                 </p>
                 <CDBBox display="flex" className="mt-4">
                   <CDBBtn flat color="dark">
-                    <CDBIcon fab icon="facebook-f" />
+
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                      <CDBIcon fab icon="facebook-f" style={{ color: 'white' }} />
+                    </a>
                   </CDBBtn>
                   <CDBBtn flat color="dark" className="mx-3">
-                    <CDBIcon fab icon="twitter" />
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                      <CDBIcon fab icon="twitter" style={{ color: 'white' }} />
+                    </a>
                   </CDBBtn>
                   <CDBBtn flat color="dark" className="p-2">
-                    <CDBIcon fab icon="linkedin-in" />
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                      <CDBIcon fab icon="linkedin-in" style={{ color: 'white' }} />
+                    </a>
+
                   </CDBBtn>
                 </CDBBox>
               </CDBBox>
@@ -64,8 +77,10 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
                   MindGames
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
-                  <Link to='/'>About Us</Link>
-                  <Link to='/Contactus'>Contact</Link>
+
+                  <Link> About Us</Link>
+                  <Link to='/Contactus'> Contact</Link>
+
                 </CDBBox>
               </CDBBox>
               <CDBBox>
@@ -73,7 +88,10 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
                   Help
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
+
+                  <Link>Sign In</Link>    
                   <Link to='/Login'>Sign In</Link>
+
                 </CDBBox>
               </CDBBox>
               <CDBBox>
@@ -81,13 +99,21 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
                   Products
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
-                  <Link>Windframe</Link>
-                  <Link>Loop</Link>
-                  <Link>Contrast</Link>
+
+                  <a href="https://group.mercedes-benz.com/innovation/design/design-philosophy.html" target="_blank" rel="noopener noreferrer">
+                    Windframe
+                  </a>
+                  <a href="https://group.mercedes-benz.com/innovation/design/design-philosophy.html" target="_blank" rel="noopener noreferrer">
+                    Loop
+                  </a>
+                  <a href="https://group.mercedes-benz.com/innovation/design/design-philosophy.html" target="_blank" rel="noopener noreferrer">
+                    Contrast
+                  </a>
                 </CDBBox>
               </CDBBox>
             </CDBBox>
-            <small className="text-center">&copy; MindGames Ltd</small>
+            <small className="text-center" >&copy; MindGames Ltd</small>
+
           </CDBBox>
         </CDBModalFooter>
       </div>
