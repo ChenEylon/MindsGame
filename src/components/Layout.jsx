@@ -12,6 +12,8 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
     setLoginNav(loginState())
   }, [isLogIn]);
 
+  
+
   function loginState() {
     if (!isLogIn) {
       setLinkto("/Login")

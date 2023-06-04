@@ -1,10 +1,10 @@
-
+import { Link, Outlet } from 'react-router-dom';
 import React, {useEffect, useState } from 'react';
 
 import "./EventPage.css"
 import { useParams } from 'react-router-dom';
 
-export const EventPage = () => {
+export const EventPage = ({buyMe ,setBuyMe}) => {
   const [dataArr, setDataArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
   const [dataid,setDataid] = useState(0) ;
   const { id } = useParams();
@@ -45,7 +45,7 @@ export const EventPage = () => {
             <h5 className='place'>this is a map</h5>
             <h5 className='place'>this is the capacity</h5>
             <h5 className='place'>for contact:{dataid?.email} </h5>
-            <button>this is the buy</button>
+            <Link onClick={()=>setBuyMe(dataid)} to={"/Payment"}>buy</Link>
           </div>
 
 

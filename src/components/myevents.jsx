@@ -14,7 +14,7 @@ const Myevents = () => {
     const url = `/Myevents/${formattedDate}`;
     history.pushState({}, "", url);
     location.reload()
-   
+    
     console.log(formattedDate);
 
   };

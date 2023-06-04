@@ -12,11 +12,13 @@ import  SignUp  from './components/SignUp'
 import data from "./MOCK_DATA.json";
 import users from "./UsersData.json";
 import "./App.css"
+import Payment from './components/Payment';
 
 function App() {
 
 
   const [isLogIn, setIsLogIn] = useState(localStorage.getItem('loginData'));
+  const [buyMe, setBuyMe] = useState({});
 
 
   
@@ -38,13 +40,14 @@ function App() {
         <Route path="/" element={<Layout isLogIn={isLogIn} setIsLogIn={setIsLogIn}/>}>
           <Route  path='/' element={<HomePage />}  />
           <Route path='/Events' element={<Events/>} />
-          <Route path={`/Events/:id`} element={<EventPage />}  />
+          <Route path={`/Events/:id`} element={<EventPage buyMe={buyMe} setBuyMe={setBuyMe}/>}  />
           <Route path={`/Myevents`} element={<Myevents />}  />
           <Route path={`/Myevents/:date`} element={<SpecificDay/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />
           <Route path={`/Specificday`} element={<SpecificDay/>}  />
           <Route path={`/Login`} element={<Login isLogIn={isLogIn} setIsLogIn={setIsLogIn}/>}  />
           <Route path={`/Signup`} element={<SignUp/>}  />
+          <Route path={`/Payment`} element={<Payment buyMe={buyMe} setBuyMe={setBuyMe}/>}  />
         </Route>
       </Routes>
     </div>
