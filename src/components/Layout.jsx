@@ -4,6 +4,7 @@ import { CDBModalFooter, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
 import React, { useEffect, useState } from 'react';
 
 export const Layout = ({isLogIn,setIsLogIn}) => {
+  
   const [loginNav, setLoginNav] = useState("");
   const [linkto, setLinkto] = useState("");
   
@@ -18,7 +19,15 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
     }
     else{
       setLinkto("/Myevents")
-      return <button id="logoutBtn" className="navLink" onClick={()=>{localStorage.removeItem('loginData'); setIsLogIn(false)}}>Log out</button>
+      return <button id="logoutBtn" className="navLink" onClick={()=>{
+        localStorage.removeItem('loginData'); 
+        setIsLogIn(false)
+        const url = `/`;
+        history.pushState({}, "", url);
+        location.reload()
+      }
+    
+    }>Log out</button>
     }
     
   }

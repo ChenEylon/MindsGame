@@ -16,11 +16,13 @@ function SignUp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [usersArray, setUsersArray] = useState(JSON.parse(localStorage.getItem("usersArr")));
 
   const handleLogin = (e) => {
     e.preventDefault();
 
     const newUser = {
+      id: usersArray.length+1,
       email: username,
       password: password,
       myEvents: []
