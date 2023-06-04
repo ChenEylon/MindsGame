@@ -23,7 +23,6 @@ export const SpecificDay = () => {
   useEffect(() => {
     theDate= date.replaceAll("-","/");
     setDataByDate(dataArr?.find((view)=> view.date == theDate))
-   
   },[]);
 
   const [submitted, setSubmitted] = useState(false);
@@ -38,7 +37,7 @@ export const SpecificDay = () => {
     
       event_name: "",
       id: "",
-      date: theDate,
+      date: "",
       email: "",
       start_time: "",
       duration: "",
@@ -49,8 +48,8 @@ export const SpecificDay = () => {
       city: "",
       lecturer_name: "",
       lecturer_info: "",
-      price: 120,
-      max_amount: 120
+      price: "",
+      max_amount: ""
     
   });
 
@@ -83,9 +82,9 @@ export const SpecificDay = () => {
     });
     let theId= userObject.id
     userObject.myEvents = [...userObject.myEvents, newData] 
-    usersArr[theId]=userObject;
+    usersArr[theId-1]=userObject;
     
-    localStorage.setItem("usersArr", JSON.stringify(updatedDataArr));
+    localStorage.setItem("usersArr", JSON.stringify(usersArr));
 
   };
   const handleNewForm = () => {
