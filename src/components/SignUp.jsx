@@ -12,44 +12,31 @@ import {
   MDBIcon
 } from 'mdb-react-ui-kit';
 
-function Login({setIsLogIn}) {
-  const [usersArr, setUsersArr] = useState(JSON.parse(localStorage.getItem("usersArr")) || []);
+function SignUp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loginData, setLoginData] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [theUser, setTheUser] = useState(null);
-
-  useEffect(() => {
-    const loginDataString = localStorage.getItem('loginData');
-    if (loginDataString) {
-      const parsedLoginData = JSON.parse(loginDataString);
-      setLoginData(parsedLoginData);
-    }
-  }, []);
-
-  useEffect(() => {
-    setTheUser(usersArr?.find((user) => user.email === username));
-  }, [usersArr, username]);
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (theUser && theUser.password === password) {
-      const updatedLoginData = {
-        [username]: password
-      };
-      const updatedLoginDataString = JSON.stringify(updatedLoginData);
+    const newUser = {
+      email: username,
+      password: password,
+      myEvents: []
+    };
 
-      localStorage.setItem('loginData', updatedLoginDataString);
-
-     
-      setLoginData(updatedLoginData);
-      setSubmitted(true);
-      setIsLogIn(true)
-    } else {
-      alert("Incorrect username or password. Please try again.");
+    const usersArrString = localStorage.getItem('usersArr');
+    let usersArr = [];
+    if (usersArrString) {
+      usersArr = JSON.parse(usersArrString);
     }
+    usersArr.push(newUser);
+    localStorage.setItem('usersArr', JSON.stringify(usersArr));
+
+    setUsername('');
+    setPassword('');
+    setSubmitted(true);
   };
 
   const handleNewForm = () => {
@@ -60,16 +47,22 @@ function Login({setIsLogIn}) {
     <MDBContainer fluid>
       <MDBRow className='d-flex justify-content-center align-items-center h-100'>
         <MDBCol col='12'>
-          <MDBCard className='bg-dark text-white my-5 mx-auto' style={{ borderRadius: '1rem', maxWidth: '400px' }}>
+          <MDBCard
+            className='bg-dark text-white my-5 mx-auto'
+            style={{ borderRadius: '1rem', maxWidth: '400px' }}
+          >
             <MDBCardBody className='p-5 d-flex flex-column align-items-center mx-auto w-100'>
               {submitted ? (
                 <>
-                  <h2 className="fw-bold mb-2 text-uppercase">Welcome {username} </h2>
+                  <h2 className="fw-bold mb-2 text-uppercase">The account has been created</h2>
+                  <p className="text-white-50 mb-5">Please 
+                  <Link to="/Login" > Login</Link>
+                  </p>
                 </>
               ) : (
                 <>
-                  <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                  <p className="text-white-50 mb-5">Please enter your login and password!</p>
+                  <h2 className="fw-bold mb-2 text-uppercase">SignUp</h2>
+                  <p className="text-white-50 mb-5">Please enter the next Fields</p>
                   <MDBInput
                     wrapperClass='mb-4 mx-5 w-100'
                     labelClass='text-white'
@@ -90,14 +83,9 @@ function Login({setIsLogIn}) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-          
-                  <button onClick={handleLogin}>
-                    Login
-                  </button>
-
-                  <div>
-                    <p className="mb-0">Don't have an account? <Link to="/Signup">sign up here</Link></p>
-                  </div>
+                  <button onClick={handleLogin}>Sign up</button>
+                    
+                 
                 </>
               )}
             </MDBCardBody>
@@ -108,4 +96,4 @@ function Login({setIsLogIn}) {
   );
 }
 
-export default Login;
+export default SignUp;

@@ -1,24 +1,40 @@
-import React from 'react'
-import "./Layout.css"
-import { Link, Outlet } from 'react-router-dom'
+import "./Layout.css";
+import { Link, Outlet } from 'react-router-dom';
 import { CDBModalFooter, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
+import React, { useEffect, useState } from 'react';
 
+export const Layout = ({isLogIn,setIsLogIn}) => {
+  const [loginNav, setLoginNav] = useState("");
+  useEffect(() => {
+    setLoginNav(loginState())
+  }, [isLogIn]);
 
-export const Layout = () => {
+  function loginState() {
+    if (!isLogIn) {
+      return <Link to="/Login" className="link navLink">Login</Link>
+    }
+    else{
+      return <button id="logoutBtn" className="navLink" onClick={()=>{localStorage.removeItem('loginData'); setIsLogIn(false)}}>Log out</button>
+    }
+    
+  }
   return (
-    <div id='body-container' >
+    <div id='body-container'>
       <nav id='navbar'>
         <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
         <Link to='/' className="link navLink">Home</Link>
         <Link to='/Events' className="link navLink">Events</Link>
-        <Link to='/Myevents' className="link navLink">My Events </Link>
-        <Link to="/Login" className="link navLink">Login</Link>
+        <Link to='/Myevents' className="link navLink">My Events</Link>
+        {loginNav}
+        
       </nav>
       <div id="under-nav">
+
 
         <div id='outlet'>
           <Outlet />
         </div>
+
 
 
 
@@ -34,6 +50,7 @@ export const Layout = () => {
                 </p>
                 <CDBBox display="flex" className="mt-4">
                   <CDBBtn flat color="dark">
+
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                       <CDBIcon fab icon="facebook-f" style={{ color: 'white' }} />
                     </a>
@@ -47,6 +64,7 @@ export const Layout = () => {
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                       <CDBIcon fab icon="linkedin-in" style={{ color: 'white' }} />
                     </a>
+
                   </CDBBtn>
                 </CDBBox>
               </CDBBox>
@@ -55,8 +73,10 @@ export const Layout = () => {
                   MindGames
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
+
                   <Link> About Us</Link>
                   <Link to='/Contactus'> Contact</Link>
+
                 </CDBBox>
               </CDBBox>
               <CDBBox>
@@ -64,8 +84,10 @@ export const Layout = () => {
                   Help
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
-                  <Link>Sign In</Link>
-                  <Link>LogIn</Link>
+
+                  <Link>Sign In</Link>    
+                  <Link to='/Login'>Sign In</Link>
+
                 </CDBBox>
               </CDBBox>
               <CDBBox>
@@ -87,9 +109,10 @@ export const Layout = () => {
               </CDBBox>
             </CDBBox>
             <small className="text-center" >&copy; MindGames Ltd</small>
+
           </CDBBox>
         </CDBModalFooter>
       </div>
     </div>
-  )
-}
+  );
+};

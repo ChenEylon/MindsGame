@@ -33,20 +33,6 @@ export const SpecificDay = () => {
   } = useForm();
 
   const [formData, setFormData] = useState({
-    // event_name: "",
-    // date: "",
-    // email: "",
-    // start_time: "",
-    // duration: "",
-    // event_info: "",
-    // event_image: "",
-    // place_name: "",
-    // street_address: "",
-    // city: "",
-    // lecturer_name: "",
-    // lecturer_info: "",
-    // price: "",
-    // max_amount: "",
     
       event_name: "",
       id: "",
