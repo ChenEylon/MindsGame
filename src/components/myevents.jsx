@@ -2,12 +2,10 @@ import "./myevents.css";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 
-import "react-calendar/dist/Calendar.css";
 import { Link } from 'react-router-dom';
 
 
-
-const Myevents = ({isLogIn}) => {
+const Myevents = () => {
   const [value, onChange] = useState(new Date());
   const handleDateClick = (date) => {
     const day = date.getDate();
@@ -17,9 +15,11 @@ const Myevents = ({isLogIn}) => {
     const url = `/Myevents/${formattedDate}`;
     history.pushState({}, "", url);
     location.reload()
+   
     console.log(formattedDate);
 
   };
+
 
 
   return (

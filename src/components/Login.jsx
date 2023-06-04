@@ -12,7 +12,7 @@ import {
   MDBIcon
 } from 'mdb-react-ui-kit';
 
-function Login({setIsLogIn}) {
+function Login({setIsLogIn , isLogIn}) {
   const [usersArr, setUsersArr] = useState(JSON.parse(localStorage.getItem("usersArr")) || []);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -47,6 +47,10 @@ function Login({setIsLogIn}) {
       setLoginData(updatedLoginData);
       setSubmitted(true);
       setIsLogIn(true)
+
+      const url = `/Myevents`;
+      history.pushState({}, "", url);
+      location.reload()
     } else {
       alert("Incorrect username or password. Please try again.");
     }
