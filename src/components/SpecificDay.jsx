@@ -21,6 +21,7 @@ export const SpecificDay = () => {
     theDate= date.replaceAll("-","/");
     setDataByDate(dataArr?.find((view)=> view.date == theDate))
     console.log(dataByDate);
+    console.log(theDate);
   },[]);
 
   const [submitted, setSubmitted] = useState(false);
@@ -133,7 +134,7 @@ export const SpecificDay = () => {
                         type='date'
                         name="date"
                         {...register("date", { required: true })}
-                        value={formData.date}
+                        value={theDate}
                         onChange={handleChange}
                         className="form-control formInput"
                         placeholder="Date"
@@ -223,10 +224,10 @@ export const SpecificDay = () => {
                         type="text"
                         name="event_image"
                         {...register("event_image", { required: true })}
-                        value={formData.event_image}
+                        value= {`${formData.event_image}`}
                         onChange={handleChange}
                         className="form-control formInput"
-                        placeholder="Event Image"
+                        placeholder="Event Image-only 1920X1080 "
                       />
                       {errors.event_image && (
                         <span className="errorMessage">

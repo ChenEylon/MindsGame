@@ -1,7 +1,7 @@
 import "./myevents.css";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+
 
 
 
@@ -19,12 +19,6 @@ const Myevents = () => {
 
   };
 
-  // const dayTileContent = ({ date, view }) => {
-  //   if (view === "month") {
-  //     return <div onClick={() => }>Day</div>;
-  
-  //   }
-  // };
 
   return (
     <div className="calender-div">
