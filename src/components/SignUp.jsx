@@ -20,26 +20,26 @@ function SignUp() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    const newUser = {
-      id: usersArray.length+1,
-      email: username,
-      password: password,
-      myEvents: []
-    };
-
-    const usersArrString = localStorage.getItem('usersArr');
-    let usersArr = [];
-    if (usersArrString) {
-      usersArr = JSON.parse(usersArrString);
+  
+    if (!usersArray.some((user) => user.email === username)) {
+      const newUser = {
+        id: usersArray.length + 1,
+        email: username,
+        password: password,
+        myEvents: [],
+      };
+  
+      const usersArr = [...usersArray, newUser];
+      localStorage.setItem('usersArr', JSON.stringify(usersArr));
+  
+      setUsername('');
+      setPassword('');
+      setSubmitted(true);
+    } else {
+      alert('This email is already taken');
     }
-    usersArr.push(newUser);
-    localStorage.setItem('usersArr', JSON.stringify(usersArr));
-
-    setUsername('');
-    setPassword('');
-    setSubmitted(true);
   };
+  
 
   const handleNewForm = () => {
     setSubmitted(false);
@@ -87,6 +87,9 @@ function SignUp() {
                   />
                   <button className='logBtn' onClick={handleLogin}>Sign up</button>
                     
+                  <div>
+                    <p className="mb-0" id='dontHaveAccount'>already have an account? <Link to="/Login">Login here</Link></p>
+                  </div>
                  
                 </>
               )}
