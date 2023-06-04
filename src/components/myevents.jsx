@@ -29,6 +29,7 @@ const Myevents = () => {
   return (
     <div className="calender-div">
       <Calendar
+      calendarType='US'
         className={"calender"}
         value={value}
         onChange={onChange}
