@@ -54,9 +54,7 @@
 .description{
     margin-top: 5vh;
 }
-button{
-    background-color: green;
-}
+
 .rest{
     display: flex;
     margin-bottom: 10vh;

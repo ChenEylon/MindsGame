@@ -3,6 +3,11 @@
     box-sizing: border-box; 
 }
 
+#logoutBtn{
+all: unset;
+cursor: pointer;
+font-size: small;
+}
 #navbar{
     display: flex;
     justify-content: space-around;
