@@ -16,7 +16,9 @@ import "./App.css"
 function App() {
 
 
-  const [isLogIn, setIsLogIn] = useState(localStorage.getItem("loginData"));
+  const [isLogIn, setIsLogIn] = useState(localStorage.getItem('loginData'));
+
+
   
 
   if(!localStorage.getItem("dataArr")){

@@ -38,7 +38,7 @@ export const SpecificDay = () => {
     
       event_name: "",
       id: "",
-      date: "",
+      date: theDate,
       email: "",
       start_time: "",
       duration: "",
