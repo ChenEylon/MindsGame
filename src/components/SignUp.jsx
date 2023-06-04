@@ -83,7 +83,7 @@ function SignUp() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <button onClick={handleLogin}>Sign up</button>
+                  <button className='logBtn' onClick={handleLogin}>Sign up</button>
                     
                  
                 </>
