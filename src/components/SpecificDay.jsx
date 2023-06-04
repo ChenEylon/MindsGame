@@ -4,24 +4,26 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import "./SpecificDay.css";
 import { useParams } from "react-router";
+import { object } from 'prop-types';
 
 
 
 export const SpecificDay = () => {
   const [dataArr, setDataArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
-  const [usersArr, setUsersArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
+  const [usersArr, setUsersArr] = useState(JSON.parse(localStorage.getItem("usersArr")));
   
   const [dataByDate, setDataByDate] = useState(0);
-
+  let currentUser= JSON.parse(localStorage.getItem("loginData"))
   
+  let userObject = usersArr?.find((view)=> view.email == Object.keys(currentUser)[0])
+
   const { date } = useParams();
   let theDate;
 
   useEffect(() => {
     theDate= date.replaceAll("-","/");
     setDataByDate(dataArr?.find((view)=> view.date == theDate))
-    console.log(dataByDate);
-    console.log(theDate);
+   
   },[]);
 
   const [submitted, setSubmitted] = useState(false);
@@ -43,7 +45,7 @@ export const SpecificDay = () => {
       event_info: "",
       event_image: "",
       place_name: "",
-      street_addres: "",
+      street_address: "",
       city: "",
       lecturer_name: "",
       lecturer_info: "",
@@ -71,12 +73,20 @@ export const SpecificDay = () => {
       id: newId,
       ...data,
     };
+
+    
   
     setDataArr((prevDataArr) => {
       const updatedDataArr = [...prevDataArr, newData];
       localStorage.setItem("dataArr", JSON.stringify(updatedDataArr));
       return updatedDataArr;
     });
+    let theId= userObject.id
+    userObject.myEvents = [...userObject.myEvents, newData] 
+    usersArr[theId]=userObject;
+    
+    localStorage.setItem("usersArr", JSON.stringify(updatedDataArr));
+
   };
   const handleNewForm = () => {
     setSubmitted(false);

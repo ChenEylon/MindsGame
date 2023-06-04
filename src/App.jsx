@@ -17,6 +17,8 @@ function App() {
 
 
   const [isLogIn, setIsLogIn] = useState(localStorage.getItem('loginData'));
+
+
   
 
   if(!localStorage.getItem("dataArr")){
@@ -37,11 +39,11 @@ function App() {
           <Route  path='/' element={<HomePage />}  />
           <Route path='/Events' element={<Events/>} />
           <Route path={`/Events/:id`} element={<EventPage />}  />
-          <Route path={`/Myevents`} element={<Myevents isLogIn={isLogIn}/>}  />
+          <Route path={`/Myevents`} element={<Myevents />}  />
           <Route path={`/Myevents/:date`} element={<SpecificDay/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />
           <Route path={`/Specificday`} element={<SpecificDay/>}  />
-          <Route path={`/Login`} element={<Login setIsLogIn={setIsLogIn}/>}  />
+          <Route path={`/Login`} element={<Login isLogIn={isLogIn} setIsLogIn={setIsLogIn}/>}  />
           <Route path={`/Signup`} element={<SignUp/>}  />
         </Route>
       </Routes>
