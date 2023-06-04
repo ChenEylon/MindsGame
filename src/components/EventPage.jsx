@@ -1,16 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
-import DataContext from '../DataContext';
+import React, {useEffect, useState } from 'react';
 import "./EventPage.css"
 import { useParams } from 'react-router-dom';
 
 export const EventPage = () => {
-  const theContext = useContext(DataContext);
-  const theData = theContext[0]
+  const [dataArr, setDataArr] = useState(JSON.parse(localStorage.getItem("dataArr")));
   const [dataid,setDataid] = useState(0) ;
   const { id } = useParams();
   
   useEffect(() => {
-    setDataid(theData?.find((view) =>view.id == id))
+    setDataid(dataArr?.find((view) =>view.id == id))
   }, []);
 
   return (
@@ -53,7 +51,7 @@ export const EventPage = () => {
 
         </div>
         <h6 className='headlinebottom'> The MindGame of the day:</h6>
-        <h6 className='description'> {theData[0].event_info}</h6>
+        <h6 className='description'> {dataid.event_info}</h6>
       </div>
     </div>
 
