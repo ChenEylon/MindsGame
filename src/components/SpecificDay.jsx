@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import "./SpecificDay.css";
 import { useParams } from "react-router";
-import { object } from 'prop-types';
+import { EventCardUserArr } from './EventCardUserArr';
 
 
 
@@ -95,7 +95,9 @@ export const SpecificDay = () => {
 
   if (!submitted) {
     return (
+      
       <div className="SpecificDay">
+        {userObject.myEvents.map((value,index)=><EventCardUserArr key={index} index={index} />)}
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
