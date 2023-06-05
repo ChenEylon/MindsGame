@@ -29,7 +29,7 @@ function createPrice(price){
 }
 
   return (
-    <div>
+    <div className="nanabanana">
       <select id="sort" onChange={(e) => sortByPrice(e.target.value)}>
         <option value="sort by price">Sort By Price </option>
         <option value="high-to-low">High To Low</option>
