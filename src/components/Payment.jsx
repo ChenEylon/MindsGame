@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Cards from 'react-credit-cards-2';
 import 'react-credit-cards-2/dist/es/styles-compiled.css';
+import emailjs from '@emailjs/browser';
   
   const Payment = ({buyMe ,setBuyMe}) => {
     const [state, setState] = useState({
@@ -25,7 +26,19 @@ import 'react-credit-cards-2/dist/es/styles-compiled.css';
       const url = `/events`;
       history.pushState({}, "", url);
       location.reload()
+      sendEmail(e);
     }
+    const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_70o4oqk', 'template', e.target, 'ZjMePZlpfng_2A2Jl')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+  };
 
     return (
       <div id='payment-container' >
@@ -74,6 +87,12 @@ import 'react-credit-cards-2/dist/es/styles-compiled.css';
             value={state.cvc}
             onChange={handleInputChange}
             onFocus={handleInputFocus}
+          />
+          <input className='payment-inputs'
+            type="email"
+            name="email"
+            placeholder="email for reciept"
+            
           />
           </div>
         </div>
