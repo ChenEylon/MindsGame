@@ -19,6 +19,7 @@ function App() {
 
   const [isLogIn, setIsLogIn] = useState(localStorage.getItem('loginData'));
   const [buyMe, setBuyMe] = useState({});
+  const [selectedDate, setSelectedDate] = useState("");
 
 
   
@@ -41,8 +42,8 @@ function App() {
           <Route  path='/' element={<HomePage />}  />
           <Route path='/Events' element={<Events/>} />
           <Route path={`/Events/:id`} element={<EventPage buyMe={buyMe} setBuyMe={setBuyMe}/>}  />
-          <Route path={`/Myevents`} element={<Myevents />}  />
-          <Route path={`/Myevents/:date`} element={<SpecificDay/>}  />
+          <Route path={`/Myevents`} element={<Myevents setSelectedDate={setSelectedDate} selectedDate={selectedDate} />}  />
+          <Route path={`/Myevents/:date`} element={<SpecificDay setSelectedDate={setSelectedDate} selectedDate={selectedDate}/>}  />
           <Route path={`/Contactus`} element={<Contactus/>}  />
           <Route path={`/Specificday`} element={<SpecificDay/>}  />
           <Route path={`/Login`} element={<Login isLogIn={isLogIn} setIsLogIn={setIsLogIn}/>}  />
