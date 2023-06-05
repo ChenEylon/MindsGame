@@ -116,3 +116,14 @@ font-size: small;
     justify-content: space-around;
     align-items: center;
 }
+@media (max-width: 768px) {
+    #payment-form {
+        display: flex;
+      flex-direction: column;
+      align-items: baseline;
+    }
+    #pay-section{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,8 +1,7 @@
 import "./Layout.css";
-import {  Outlet } from 'react-router-dom';
+import {  Link, Outlet } from 'react-router-dom';
 import { CDBModalFooter, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
 import React, { useEffect, useRef, useState } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
 
 export const Layout = ({isLogIn,setIsLogIn}) => {
   
@@ -90,7 +89,7 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
 
-                 <Link to='/'>About us</Link>
+                 <Link to='/' scroll={{top: 100, left: 100,behavior: "smooth"}}>About us</Link>
                   <Link to='/Contactus'> Contact</Link>
 
                 </CDBBox>

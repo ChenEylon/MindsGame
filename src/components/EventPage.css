@@ -87,7 +87,7 @@
   .rest {
     display: flex;
     margin-bottom: 10vh;
-  
+    
   }
   
   .third {
@@ -121,7 +121,7 @@
   
   @media (max-width: 768px) {
     .img {
-      height: 30vh;
+      height: 50vh;
     }
   
     .name {
@@ -135,15 +135,22 @@
     .firstrest {
       width: 80%;
       margin-left: 2vw;
+      margin-bottom: 20px;
     }
   
     .secondrest {
       width: 50%;
+      margin-left: 20px;
     }
   
     .third {
       width: 80%;
     }
+    .rest {
+        display: flex;
+        margin-bottom: 10vh;
+        flex-wrap: wrap;
+      }
   }
   
   @media (max-width: 480px) {
@@ -171,5 +178,10 @@
     .third {
       width: 90%;
     }
+    .rest {
+        display: flex;
+        margin-bottom: 10vh;
+        flex-wrap: wrap;
+      }
   }
   
