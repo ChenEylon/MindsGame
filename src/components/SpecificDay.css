@@ -29,6 +29,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    justify-content: center;
   }
   .text-center {
     text-align: center;
@@ -68,6 +69,12 @@
     padding: 10px;
     border: none;
     color: #000000;
+}
+
+.SpecificDay{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
   /* Responsive Styles */
   @media (max-width: 768px) {

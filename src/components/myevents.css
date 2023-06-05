@@ -6,6 +6,7 @@
 .calender-div{
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 .react-calendar { 
   width: 100%;
@@ -100,6 +101,18 @@
   display: flex;
  }
  .react-calendar__tile {
-  background-color: #415A77;
+  background-color: #778DA9;
   color: #1B263B;
+ }
+
+ #all-my-events-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+ }
+
+ #my-lectures-title{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
  }
