@@ -12,6 +12,7 @@ export const HomePage = () => {
         <img className='image' src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW90aXZhdGlvbmFsJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="" />
         <h1 className='text-overlay'>Unlock Your Mind, Expand Your World: Learn with MindGames!</h1>
       </div>
+
       <div className='ourgoals'>
         <span className='goal goal1'>
           
@@ -35,7 +36,18 @@ export const HomePage = () => {
             Join us and enjoy the best way to buy lecture tickets.</span>
         </span>
       </div>
-      <div className='aboutus'>
+      <div class="card">
+        <div class="card-header">
+          Quote
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>"Selling tickets is an exciting journey filled with endless possibilities."</p>
+            <footer class="blockquote-footer">Ofek Segal in <cite title="Source Title">Cyberpro class</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <div className='aboutus' >
         <img className='imgabout' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzZwV8bkeAZPj8qTkalGzenGazW6BMyd-XKe86MVVfjWH2Lj-OVWSO1ZATtYai4jfPCOY&usqp=CAU" alt="" />
         <div className='about'>
           <span style={{ fontSize: "30px", font: 'bald' }}>About us:</span>
