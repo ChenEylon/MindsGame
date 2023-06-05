@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import emailjs from '@emailjs/browser'
 import { useForm } from "react-hook-form";
 import "./SpecificDay.css";
 import { useParams } from "react-router";
@@ -36,6 +36,11 @@ export const CreateNewEvent = () => {
     formState: { errors },
     reset,
   } = useForm();
+
+  const onSubmit = (data, e) => {
+    handleSubmission(data);
+    sendEmail(e);
+  };
 
   const [formData, setFormData] = useState({
     event_name: "",
@@ -93,7 +98,17 @@ export const CreateNewEvent = () => {
     setSubmitted(false);
     reset();
   };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
+    emailjs.sendForm('service_70o4oqk', 'template', e.target, 'ZjMePZlpfng_2A2Jl')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+    };
   
   if (!submitted) {
     return (
@@ -106,7 +121,7 @@ export const CreateNewEvent = () => {
               <div className="SpecificDay">
                 <form
                   id="contact-form"
-                  onSubmit={handleSubmit(handleSubmission)}
+                  onSubmit={handleSubmit(onSubmit)}
                   noValidate
                 >
                   <div id="event-info" className="row formRow">
