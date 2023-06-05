@@ -1,85 +1,89 @@
-import React from "react";
-import { EventCard } from './EventCard';
+import React, { useState } from 'react';
+import Cards from 'react-credit-cards-2';
+import 'react-credit-cards-2/dist/es/styles-compiled.css';
+  
+  const Payment = ({buyMe ,setBuyMe}) => {
+    const [state, setState] = useState({
+      number: '',
+      expiry: '',
+      cvc: '',
+      name: '',
+      focus: '',
+    });
+  
+    const handleInputChange = (evt) => {
+      const { name, value } = evt.target;
+      
+      setState((prev) => ({ ...prev, [name]: value }));
+    }
+  
+    const handleInputFocus = (evt) => {
+      setState((prev) => ({ ...prev, focus: evt.target.name }));
+    }
 
-import {
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCol,
-  MDBContainer,
-  MDBInput,
-  MDBRow,
-} from "mdb-react-ui-kit";
+    function handlePay(){
+      const url = `/events`;
+      history.pushState({}, "", url);
+      location.reload()
+    }
 
-export default function Payment({buyMe ,setBuyMe}) {
-    console.log(buyMe);
-  return (
+    return (
+      <div id='payment-container' >
+          
+        <div id='payment-form'>
+        <div id="card">
+        <Cards 
+          number={state.number}
+          expiry={state.expiry}
+          cvc={state.cvc}
+          name={state.name}
+          focused={state.focus}
+        />
+        </div>
+        <div id='card-inputs-section'>
 
-    <MDBContainer
-    
-      className="py-5"
-      fluid
-      style={{
-        backgroundImage:
-          "url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp)",
-      }}
-    >
-           
-
-      <MDBRow className=" d-flex justify-content-center">
-        <MDBCol md="10" lg="8" xl="5">
-          <MDBCard className="rounded-3">
-            <MDBCardBody className="p-4">
-              <div className="text-center mb-4">
-                <h3>Settings</h3>
-                <h6>Payment</h6>
-              </div>
-
-              <div>
-                <h3>{buyMe.event_name}, only: {buyMe.price}$</h3>
-              </div>
-              <p className="fw-bold mb-4">Add new card:</p>
-              <MDBInput
-                label="Cardholder's Name"
-                id="form3"
-                type="text"
-                size="lg"
-                value="Anna Doe"
-              />
-              <MDBRow className="my-4">
-                <MDBCol size="7">
-                  <MDBInput
-                    label="Card Number"
-                    id="form4"
-                    type="text"
-                    size="lg"
-                    value="1234 5678 1234 5678"
-                  />
-                </MDBCol>
-                <MDBCol size="3">
-                  <MDBInput
-                    label="Expire"
-                    id="form5"
-                    type="password"
-                    size="lg"
-                    placeholder="MM/YYYY"
-                  />
-                </MDBCol>
-                <MDBCol size="2">
-                  <MDBInput
-                    label="CVV"
-                    id="form6"
-                    type="password"
-                    size="lg"
-                    placeholder="CVV"
-                  />
-                </MDBCol>
-              </MDBRow>
-              <button>Pay</button>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-  );
-}
+          <div id='inputs-fiels-card'>
+          <input className='payment-inputs'
+            type="number"
+            name="number"
+            placeholder="Card Number"
+            value={state.number}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+          />
+          <input className='payment-inputs'
+            type="number"
+            name="expiry"
+            placeholder="Card Expiry"
+            value={state.expiry}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+          />
+          <input className='payment-inputs'
+            type="text"
+            name="name"
+            placeholder="Card's Owner Name"
+            value={state.name}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+          />
+          <input className='payment-inputs'
+            type="number"
+            name="cvc"
+            placeholder="Card's Owner Name"
+            value={state.cvc}
+            onChange={handleInputChange}
+            onFocus={handleInputFocus}
+          />
+          </div>
+        </div>
+          </div>
+          <div id='pay-section'>
+          <h4 id='the-product-title'> "{buyMe.event_name}" only {buyMe.price}$ </h4>
+        <button on onClick={()=>handlePay()}>Pay</button>
+        </div>
+      </div>
+    );
+  }
+  
+  export default Payment;

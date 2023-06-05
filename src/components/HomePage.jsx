@@ -14,6 +14,7 @@ export const HomePage = () => {
       </div>
       <div className='ourgoals'>
         <span className='goal goal1'>
+          
           <i class="fa fa-rocket" aria-hidden="true"></i>
           <span style={{ fontSize: "30px", font: 'bald' }}>  sell you tickets</span>
           <span>Sell your lecture tickets effortlessly on our platform.

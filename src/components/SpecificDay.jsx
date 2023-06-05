@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-import { useForm } from "react-hook-form";
 import "./SpecificDay.css";
-import { useParams } from "react-router";
 import { EventCardUserArr } from "./EventCardUserArr";
 import { CreateNewEvent } from "./CreateNewEvent";
 
