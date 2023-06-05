@@ -100,8 +100,8 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
                 </p>
                 <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0', display: 'flex' }}>
 
-                  <Link>Sign In</Link>    
-                  <Link to='/Login'>Sign In</Link>
+                  <Link to='/Login'>Sign In</Link>    
+                  <Link to='/Signup'>Sign up</Link>
 
                 </CDBBox>
               </CDBBox>

@@ -36,7 +36,7 @@ export const SpecificDay = () => {
       </div>
       <div className="SpecificDay">
       {!isClickedCreate &&  <button className="btn btn-primary" onClick={()=>setIsClickedCreate(true)}>
-          Create New Form
+          Create New Lecture
         </button>}
         
       {isClickedCreate &&  <CreateNewEvent/>}

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import './Contactus.css';
+import emailjs from '@emailjs/browser';
 
 const Contactus = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -12,6 +13,8 @@ const Contactus = () => {
     reset
   } = useForm();
 
+  const form = useRef();
+  
   const toastifySuccess = (data) => {
     const { name, email, subject, message } = data;
 
@@ -25,13 +28,38 @@ const Contactus = () => {
       className: 'submit-feedback success',
       toastId: 'notifyToast'
     });
-
-    // Reset the form after submission
     reset();
-
-    // Update submitted state
     setSubmitted(true);
   };
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm('service_70o4oqk', 'contact', form.current, 'ZjMePZlpfng_2A2Jl')
+  //     .then((result) => {
+  //       console.log(result.text);
+  //     }, (error) => {
+  //       console.log(error.text);
+  //     });
+  
+  // };
+  const sendEmail = (e) => {
+    e.preventDefault();
+console.log(form.current);
+    emailjs.sendForm('service_70o4oqk', 'contact', form.current, 'ZjMePZlpfng_2A2Jl')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
+  const handleFormSubmit = (data, e) => {
+    onSubmit(data);
+    sendEmail(e);
+  };
+
 
   const onSubmit = (data) => {
     console.log('Form Data:', data);
@@ -45,7 +73,11 @@ const Contactus = () => {
           <div className="row">
             <div className="col-12 text-center">
               <div className="Contactus">
-                <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+                <form
+                  id="contact-form"
+                  onSubmit={handleSubmit(handleFormSubmit)}
+                  noValidate
+                  ref={form}>
                   <div className="row formRow">
                     <div className="col-6">
                       <input
