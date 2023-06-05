@@ -28,24 +28,29 @@
   }
   
   
-.ourgoals{
+  .ourgoals {
     display: flex;
-    justify-content: space-around;
-    
-    width: 1200px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+
 }
-.goal{
-height: 50vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-margin: 10vmin;
-border: 2px solid #000;
-border-radius: 10px;
-background-color: #1B263B;
-color:#E0E1DD; ;
-padding: 20px;
+
+.goal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #1B263B;
+    color: #E0E1DD;
+    padding: 20px;
+    justify-content: space-between;
+    text-align: center;
+    width: 267px;
 }
+
 .aboutus{
     display: flex;
     width: 90%;

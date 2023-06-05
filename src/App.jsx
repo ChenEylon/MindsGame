@@ -37,6 +37,7 @@ function App() {
   return (
     <>
      <div className='body'>
+         
       <Routes>
         <Route path="/" element={<Layout isLogIn={isLogIn} setIsLogIn={setIsLogIn}/>}>
           <Route  path='/' element={<HomePage />}  />
