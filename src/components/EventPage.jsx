@@ -47,7 +47,7 @@ export const EventPage = ({ buyMe, setBuyMe }) => {
             <h5 className='place'>this is a map</h5>
             <h5 className='place'><i class="fa fa-users" aria-hidden="true"></i>: {dataid?.max_amount}</h5>
             <h5 className='place'><i class="fa fa-envelope" aria-hidden="true"></i>:{dataid?.email} </h5>
-            <Link onClick={() => setBuyMe(dataid)} to={"/Payment"}><button type="button" class="btn btn-dark">Buy Tickets</button></Link>
+            <Link onClick={() => setBuyMe(dataid)} to={"/Payment"}><button type="button" class="btn buton btn-dark">Buy Tickets</button></Link>
           </div>
 
 

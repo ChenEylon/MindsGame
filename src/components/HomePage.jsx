@@ -94,7 +94,7 @@ export const HomePage = () => {
           With a focus on quality and excellence,
           our projects aim to inspire and leave a lasting impact on the communities we serve.
         </span>
-        <Link to='/events'><button type="button" class="btn btn-dark">Our Lectures</button></Link>
+        <Link to='/events'><button type="button" class="btn boton btn-dark">Lectures</button></Link>
       </div>
     </div>
 

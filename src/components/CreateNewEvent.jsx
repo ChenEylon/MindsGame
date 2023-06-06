@@ -363,7 +363,7 @@ export const CreateNewEvent = () => {
                   {/* Rest of the form fields */}
                   <div className="row formRow">
                     <div className="col text-center">
-                      <button type="submit" className="btn btn-primary">
+                      <button type="submit" className="btn buton btn-primary">
                         Submit
                       </button>
                     </div>
