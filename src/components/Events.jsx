@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 
 export const Events = () => {
   const [test, setTest] = useState(false)
-  const [dataArr, setDataArr] = useState(
-    JSON.parse(localStorage.getItem("dataArr"))
-  );
+  const [dataArr, setDataArr] = useState([]);
+  useEffect(() => {
+    setDataArr(JSON.parse(localStorage.getItem("dataArr")))
+  }, []);
+
 
   function sortByPrice(chosen) {
     if (chosen == "Low-To-High") {

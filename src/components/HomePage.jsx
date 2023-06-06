@@ -16,7 +16,7 @@ export const HomePage = () => {
       <div className='ourgoals'>
         <span className='goal goal1'>
           
-          <i class="fa fa-rocket" aria-hidden="true"></i>
+          <i className="fa fa-rocket" aria-hidden="true"></i>
           <span style={{ fontSize: "30px", font: 'bald' }}>  sell you tickets</span>
           <span>Sell your lecture tickets effortlessly on our platform.
             Reach a wider audience, set prices, and manage inventory easily.
@@ -30,24 +30,25 @@ export const HomePage = () => {
           </span>
         </span>
         <span className='goal goal3'>
-          <i class="fa fa-rocket" aria-hidden="true"></i>
+          <i className="fa fa-rocket" aria-hidden="true"></i>
           <span style={{ fontSize: "30px", font: 'bald' }}>  give you the best website</span>
           <span>Experience seamless ticket purchasing on our platform. User-friendly interface, intuitive search, and secure transactions.
             Join us and enjoy the best way to buy lecture tickets.</span>
         </span>
       </div>
-      <div class="card">
-        <div class="card-header">
+      <div className="card">
+        <div className="card-header">
           Quote
         </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
+        <div className="card-body">
+          <blockquote className="blockquote mb-0">
             <p>"Selling tickets is an exciting journey filled with endless possibilities."</p>
-            <footer class="blockquote-footer">Ofek Segal in <cite title="Source Title">Cyberpro class</cite></footer>
+            <footer className="blockquote-footer">Ofek Segal in <cite title="Source Title">Cyberpro class</cite></footer>
           </blockquote>
         </div>
       </div>
       <div className='aboutus' >
+        
         <img className='imgabout' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzZwV8bkeAZPj8qTkalGzenGazW6BMyd-XKe86MVVfjWH2Lj-OVWSO1ZATtYai4jfPCOY&usqp=CAU" alt="" />
         <div className='about'>
           <span style={{ fontSize: "30px", font: 'bald' }}>About us:</span>
@@ -94,7 +95,7 @@ export const HomePage = () => {
           With a focus on quality and excellence,
           our projects aim to inspire and leave a lasting impact on the communities we serve.
         </span>
-        <Link to='/events'><button type="button" class="btn boton btn-dark">Lectures</button></Link>
+        <Link to='/events'><button type="button" className="btn boton btn-dark">Lectures</button></Link>
       </div>
     </div>
 

@@ -68,7 +68,7 @@ export const EventPage = ({ buyMe, setBuyMe }) => {
           <div className="gmap_canvas"><iframe  id="gmap_canvas" src="https://maps.google.com/maps?q=%D7%94%D7%97%D7%99%D7%9C%D7%96%D7%95%D7%9F%203%20%D7%A8%D7%9E%D7%AA%20%D7%92%D7%9F&t=&z=13&ie=UTF8&iwloc=&output=embed" ></iframe><a href="https://embedgooglemap.net/124/"></a><br/><a href="https://www.embedgooglemap.net"></a> </div>
             
             
-            <Link onClick={() => setBuyMe(dataid)} to={"/Payment"}><button type="button" class="btn btn-dark">Buy Tickets</button></Link>
+            <Link onClick={() => setBuyMe(dataid)} to={"/Payment"}><button type="button" id='buyMeBtn' className="btn btn-dark">Buy Tickets</button></Link>
 
           </div>
 
