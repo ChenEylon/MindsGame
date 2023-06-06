@@ -3,7 +3,7 @@ import {  Link, Outlet } from 'react-router-dom';
 import { CDBModalFooter, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
 import React, { useEffect, useRef, useState } from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import logo from "./logo-with-background.png"
 export const Layout = ({isLogIn,setIsLogIn}) => {
   
   const [loginNav, setLoginNav] = useState("");
@@ -37,7 +37,7 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
   return (
     <div id='body-container'>
       <nav id='navbar'>
-        <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
+        <Link to='/' className="link"><img className="logo" src={logo} alt="MindGames Logo" /></Link>
         <div className="nav-title"><Link to='/' className="link navLink">Home</Link><span></span></div>
         <div className="nav-title"><Link to='/Events' className="link navLink">Events</Link><span></span></div>
         <div className="nav-title"><Link to={`${linkto}`} className="link navLink">My Events</Link><span></span></div>
