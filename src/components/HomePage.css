@@ -26,6 +26,22 @@
     font-size: 24px;
     font-weight: bold;
   }
+   @media (max-width: 768px) {
+    .imgabout {
+      display: contents;
+    }
+    .imgabout2 {
+      display: contents;
+    }.text-overlay{
+        width: 80%;
+        margin-left: 20px;
+    }
+    
+    .card{
+      width: 90%;
+    }
+
+}
   
   
   .ourgoals {
@@ -89,19 +105,12 @@
     height: 300px;
     margin: 0;
 }
-@media (max-width: 768px) {
-    .imgabout {
-      display: contents;
-    }
-    .imgabout2 {
-      display: contents;
-    }.text-overlay{
-        width: 80%;
-        margin-left: 20px;
-    }
-    
 
+.card{
+  margin-bottom: 10px;
 }
+
+
 .boton{  display: flex;
 align-items: center;
 justify-content: center;
@@ -109,7 +118,8 @@ border: none;
 
 height: 40px;
 width: 100px;
-clip-path: circle(20%);
+
+clip-path: circle(40%);
 transition: 0.5s;}
 .boton:hover{
     transition: 0.9s;
@@ -230,3 +240,5 @@ transition: 0.5s;}
     transform: scale(0.95);
   }
   
+
+ 
