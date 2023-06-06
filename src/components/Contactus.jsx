@@ -1,8 +1,9 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import './Contactus.css';
 import emailjs from '@emailjs/browser';
+import { Context } from '../Context';
 
 const Contactus = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -14,7 +15,7 @@ const Contactus = () => {
   } = useForm();
 
   const form = useRef();
-  
+
   const toastifySuccess = (data) => {
     const { name, email, subject, message } = data;
 
@@ -41,16 +42,16 @@ const Contactus = () => {
   //     }, (error) => {
   //       console.log(error.text);
   //     });
-  
+
   // };
   const sendEmail = (e) => {
     e.preventDefault();
-console.log(form.current);
+    console.log(form.current);
     emailjs.sendForm('service_70o4oqk', 'contact', form.current, 'ZjMePZlpfng_2A2Jl')
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   };
 
@@ -65,7 +66,7 @@ console.log(form.current);
     console.log('Form Data:', data);
     toastifySuccess(data);
   };
-
+  const value = useContext(Context);
   if (!submitted) {
     return (
       <div className="Contactus">
@@ -157,11 +158,11 @@ console.log(form.current);
         </div>
       </div>
     );
-  } else {
+  } else {{console.log({value});}
     return (
       <div>
-        The message sent, thank you!
-        <button className="new-message-btn" onClick={() => setSubmitted(false)}>
+        The message sent, thank you! 
+        <button className="new-message-btn"  onClick={() => setSubmitted(false)}>
           New message
         </button>
       </div>

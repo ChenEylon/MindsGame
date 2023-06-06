@@ -31,10 +31,11 @@ function App() {
     localStorage.setItem("usersArr",JSON.stringify(users.users));
   }
 
-
+  const value = 'this is context';
+ 
 
   return (
-    <>
+    <>  <Context.Provider value={value}>
      <div className='body'>
          
       <Routes>
@@ -52,6 +53,7 @@ function App() {
         </Route>
       </Routes>
     </div>
+   </Context.Provider>
     </>
   )
 }

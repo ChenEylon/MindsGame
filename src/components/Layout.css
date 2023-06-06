@@ -188,4 +188,9 @@ font-size: small;
         display: flex;
         flex-direction: column;
     }
+    .nav-title{
+        font-size: x-small;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
