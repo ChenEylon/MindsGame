@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext } from 'react';
 import { HomePage } from './components/HomePage'
-import Myevents from './components/Myevents'
+import Myevents from './components/myevents'
 import { Routes,Route} from 'react-router-dom'
 import { Layout } from './components/layout'
 import { Events } from './components/Events'
