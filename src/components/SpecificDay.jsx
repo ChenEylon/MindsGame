@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./SpecificDay.css";
-import { EventCardUserArr } from "./EventCardUserArr";
+import { CreateCardSpesific } from "./CreateCardSpesific";
 import { CreateNewEvent } from "./CreateNewEvent";
 import { useParams } from "react-router";
 
@@ -21,12 +21,15 @@ export const SpecificDay = () => {
   let userObject = usersArr?.find(
     (view) => view.email == Object.keys(currentUser)[0]
     );
+   
     let myventsArr = userObject.myEvents 
-    
+    let EventByDate = myventsArr.filter((obj,index)=>obj.date==theDate);
+    console.log(EventByDate);
     function myeventsCards() {
+      console.log(theDate);
       return(
-        myventsArr.filter((obj,index)=>obj.date==theDate).map((value, index) => (
-        <EventCardUserArr key={index} index={index} />
+        EventByDate.map((value, index) => (
+        <CreateCardSpesific key={index} index={index} arr={EventByDate} />
       ))
       )
     }
