@@ -40,7 +40,7 @@ export const CreateNewEvent = () => {
   const onSubmit = (data, e) => {
     handleSubmission(data);
     sendEmail(e);
-  };
+  };
 
   const [formData, setFormData] = useState({
     event_name: "",
@@ -52,7 +52,7 @@ export const CreateNewEvent = () => {
     event_info: "",
     event_image: "",
     place_name: "",
-    street_address: "",
+    street_addres: "",
     city: "",
     lecturer_name: "",
     lecturer_info: "",
@@ -79,6 +79,7 @@ export const CreateNewEvent = () => {
     const newId = dataArr.length > 0 ? dataArr[dataArr.length - 1].id + 1 : 1;
     const newData = {
       id: newId,
+      sold: 0,
       date: theDate,
       ...data,
     };
@@ -291,7 +292,7 @@ export const CreateNewEvent = () => {
                         value={formData.email}
                         onChange={handleChange}
                         className="form-control2 formInput"
-                        placeholder="Email address"
+                        placeholder="Email addres"
                       />
                       {errors.email && (
                         <span className="errorMessage">
@@ -326,16 +327,16 @@ export const CreateNewEvent = () => {
                     <div className="col">
                       <input
                         type="text"
-                        name="street_address"
-                        {...register("street_address", { required: true })}
-                        value={formData.street_address}
+                        name="street_addres"
+                        {...register("street_addres", { required: true })}
+                        value={formData.street_addres}
                         onChange={handleChange}
                         className="form-control2 formInput"
-                        placeholder="Street Address"
+                        placeholder="Street addres"
                       />
-                      {errors.street_address && (
+                      {errors.street_addres && (
                         <span className="errorMessage">
-                          Please enter the street address
+                          Please enter the street addres
                         </span>
                       )}
                     </div>
