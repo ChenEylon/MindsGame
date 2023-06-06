@@ -2,6 +2,7 @@ import "./Layout.css";
 import {  Link, Outlet } from 'react-router-dom';
 import { CDBModalFooter, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
 import React, { useEffect, useRef, useState } from 'react';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export const Layout = ({isLogIn,setIsLogIn}) => {
   
@@ -21,7 +22,7 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
     }
     else{
       setLinkto("/Myevents")
-      return <button id="logoutBtn" className="navLink" onClick={()=>{
+      return <div id="logoutBtn" className="navLink" onClick={()=>{
         localStorage.removeItem('loginData'); 
         setIsLogIn(false)
         const url = `/`;
@@ -29,7 +30,7 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
         location.reload()
       }
     
-    }>Log out</button>
+    }><LogoutIcon/></div>
     }
     
   }
@@ -37,9 +38,9 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
     <div id='body-container'>
       <nav id='navbar'>
         <Link to='/' className="link"><img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" /></Link>
-        <Link to='/' className="link navLink">Home</Link>
-        <Link to='/Events' className="link navLink">Events</Link>
-        <Link to={`${linkto}`} className="link navLink">My Events</Link>
+        <div className="nav-title"><Link to='/' className="link navLink">Home</Link><span></span></div>
+        <div className="nav-title"><Link to='/Events' className="link navLink">Events</Link><span></span></div>
+        <div className="nav-title"><Link to={`${linkto}`} className="link navLink">My Events</Link><span></span></div>
         {loginNav}
         
       </nav>

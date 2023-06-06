@@ -21,14 +21,12 @@ font-size: small;
     z-index: 5;
 }
 
-.navLink:hover{
-    scale: 130%;
-}
 
 .logo{
     width:25vmin;
     height:50px;
     object-fit:contain;
+    cursor: pointer;
   }
   .shadow {
     background-color: #E0E1DD;
@@ -49,6 +47,12 @@ font-size: small;
     all: unset;
     cursor: pointer;
     }
+
+    
+.link:hover{
+    all: unset;
+    cursor: pointer;
+}
 
 #body-container{
     min-height: 100vh;
@@ -116,6 +120,64 @@ font-size: small;
     justify-content: space-around;
     align-items: center;
 }
+
+.nav-title {
+    border: none;
+    display: block;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: black;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  
+  .nav-title span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid #415A77;
+  }
+  
+  .nav-title span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: #E0E1DD;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+  }
+  
+  .nav-title:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: #415A77;
+  }
+  
+  .nav-title:hover {
+    color: white;
+  }
+  
+  .nav-title:active span::before {
+    background: #415A77;
+  }
+
 @media (max-width: 768px) {
     #payment-form {
         display: flex;
