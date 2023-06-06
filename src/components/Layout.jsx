@@ -59,7 +59,7 @@ export const Layout = ({isLogIn,setIsLogIn}) => {
             <CDBBox display="flex" justifyContent="between" className="flex-wrap">
               <CDBBox>
                 <a href="/" className="d-flex align-items-center p-0 text-dark">
-                  <img className="logo" src="../../logo-with-background.png" alt="MindGames Logo" />
+                  <img className="logo" src={logo} alt="MindGames Logo" />
                 </a>
                 <p className="my-3" style={{ width: '250px' }}>
                   MindGames: Unleashing the power of knowledge through captivating lectures and seamless ticketing.
