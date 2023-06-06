@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./SpecificDay.css";
 import { EventCardUserArr } from "./EventCardUserArr";
 import { CreateNewEvent } from "./CreateNewEvent";
+import { useParams } from "react-router";
 
 export const SpecificDay = () => {
+  const { date } = useParams();
+  let theDate;
+  theDate = date.replaceAll("-", "/");
 
+ 
   const [isClickedCreate, setIsClickedCreate] = useState(false);
 
   const [usersArr, setUsersArr] = useState(
@@ -20,7 +25,7 @@ export const SpecificDay = () => {
     
     function myeventsCards() {
       return(
-        myventsArr.map((value, index) => (
+        myventsArr.filter((obj,index)=>obj.date==theDate).map((value, index) => (
         <EventCardUserArr key={index} index={index} />
       ))
       )

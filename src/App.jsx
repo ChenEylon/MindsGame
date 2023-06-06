@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext } from 'react';
 import { HomePage } from './components/HomePage'
 import Myevents from './components/Myevents'
 import { Routes,Route} from 'react-router-dom'
@@ -13,10 +13,9 @@ import data from "./MOCK_DATA.json";
 import users from "./UsersData.json";
 import "./App.css"
 import Payment from './components/Payment';
+import { Context } from "./Context.jsx";
 
 function App() {
-
-
   const [isLogIn, setIsLogIn] = useState(localStorage.getItem('loginData'));
   const [buyMe, setBuyMe] = useState({});
   const [selectedDate, setSelectedDate] = useState("");
